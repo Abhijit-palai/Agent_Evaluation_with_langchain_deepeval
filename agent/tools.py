@@ -8,6 +8,12 @@ from datetime import date
 
 load_dotenv()
 
+# to see what our agent doing behind the scene.
+logging.basicConfig(
+    level = logging.INFO,
+    format= " %(asctime)s | %(levelname)s | %(message)s "
+)
+
 @tool
 def get_user_purchase_history(user:str) -> dict :
     """This tool takes the user username and return a dict of the user purchase history if the user exists"""
@@ -50,13 +56,13 @@ def get_today_date(user:str )-> str:
 #print(get_user_purchase_history.invoke("user123"))
 book = PurchaseItem(name = "book")
 pen = PurchaseItem(name = "pen")
-print(calculate_right_refund.invoke({"user":"user123",
+#print(calculate_right_refund.invoke({"user":"user123",
 
 
-                           "items":[book , pen]}))
+ #                          "items":[book , pen]}))
 
-print(issue_refund_ticket.invoke({"user":"user123" , "refund_amount":30}))
+#print(issue_refund_ticket.invoke({"user":"user123" , "refund_amount":30}))
 
 #print(get_user_purchase_history.invoke({"user":"user123" , "refund_amount":30}))
 
-print(get_today_date.invoke("user123"))
+#print(get_today_date.invoke("user123"))
