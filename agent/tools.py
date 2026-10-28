@@ -27,7 +27,7 @@ def calculate_right_refund(user:str , items:list[PurchaseItem])-> str:
         
         for item in items:
             if users_data[user].get(item.name):
-                total_refund += users_data[user][items.name]["price"]
+                total_refund += users_data[user][item.name]["price"]
                 
         return f"the value of the refund is:{total_refund}"
     return {"status":"there was no username found"}
@@ -47,5 +47,16 @@ def get_today_date(user:str )-> str:
     logging.info(f"using the date tool")
     return date.today()
 
-print(get_user_purchase_history.invoke("user123"))
+#print(get_user_purchase_history.invoke("user123"))
+book = PurchaseItem(name = "book")
+pen = PurchaseItem(name = "pen")
+print(calculate_right_refund.invoke({"user":"user123",
 
+
+                           "items":[book , pen]}))
+
+print(issue_refund_ticket.invoke({"user":"user123" , "refund_amount":30}))
+
+#print(get_user_purchase_history.invoke({"user":"user123" , "refund_amount":30}))
+
+print(get_today_date.invoke("user123"))
