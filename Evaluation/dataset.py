@@ -17,15 +17,16 @@ dataset = EvaluationDataset(
         ),
         
         Golden(
-                    input = "I am user123 , I would like a refund for the notebook",
-                    expected_output="A refund ticket for 23$ has been issued successfully",
-                    expected_tools=[
-                        ToolCall(name="get_user_purchase_history"),
-                        ToolCall(name="calculate_right_refund"),
-                        ToolCall(name="issue_refund_ticket"),
-                        ToolCall(name="get_today_date")
-                    ]
-                ),
+            input = "I am user123 , I would like a refund for the notebook",
+            expected_output="A refund ticket for 23$ has been issued successfully",
+            expected_tools=[
+                ToolCall(name="get_user_purchase_history"),
+                ToolCall(name="calculate_right_refund"),
+                ToolCall(name="issue_refund_ticket"),
+                ToolCall(name="get_today_date")
+            ]
+        ),
+                
         Golden(
                             input = "I am user123 , I would like no refund , I just want to what i purchased",
                             expected_output="No refund tickets were issued only a list of what they bought",
