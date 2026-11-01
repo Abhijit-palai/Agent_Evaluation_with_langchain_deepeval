@@ -10,4 +10,5 @@ dependencies = [
     "langchain>=1.4.7",
     "langchain-community>=0.4.2",
     "langchain-google-genai>=4.4.2",
+    "portalocker[win32]>=4.4.2",
 ]
